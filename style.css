@@ -1,0 +1,145 @@
+/*
+ * BRIGHT & BLACK THEME STYLING
+ * Uses pure black background with neon/electric accents.
+ */
+
+:root {
+    --bg-dark: #000000;       /* Pure Black background */
+    --bg-medium: #111111;     /* Control/Card background (Slightly off-black) */
+    --text-light: #ffffff;    /* Main text color */
+    --text-primary: #00ffff;  /* Electric Cyan (for main headers) */
+    --accent-glow: #ff00ff;   /* Electric Magenta (for focus/glow) */
+}
+
+body {
+  font-family: "Consolas", "Courier New", monospace;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  text-align: center;
+  margin: 0;
+  padding: 0 20px 40px 20px;
+}
+
+header {
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+h1 {
+  color: var(--text-primary);
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.5); /* Subtle neon glow */
+  margin-bottom: 5px;
+}
+
+.introduction {
+    max-width: 800px;
+    margin: 10px auto;
+    color: #aaaaaa;
+    line-height: 1.5;
+}
+
+/* --- Controls --- */
+.controls {
+  margin: 30px auto;
+  max-width: 1100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; 
+  gap: 15px;
+  padding: 10px;
+  background-color: var(--bg-medium);
+  border: 1px solid #333333;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+label {
+  font-weight: 700;
+  color: var(--text-light);
+}
+
+select {
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background-color: #222222; 
+  color: var(--text-light);
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+select:focus {
+    border-color: var(--accent-glow);
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.7); /* Strong magenta glow */
+    outline: none;
+}
+
+/* --- Chart Area --- */
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  position: relative;
+}
+
+canvas#chart {
+  width: 90%;
+  max-width: 1100px; 
+  height: 500px; 
+  background-color: var(--bg-medium);
+  border-radius: 12px;
+  border: 1px solid #333;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  padding: 25px;
+}
+
+/* --- Loading Message --- */
+#loading-message {
+    position: absolute;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--text-primary);
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+    z-index: 10;
+}
+
+.chart-container.loaded #loading-message {
+    display: none;
+}
+
+/* --- Footer --- */
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    border-top: 1px solid #333;
+    color: #777;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: var(--text-primary);
+    text-shadow: 0 0 3px rgba(0, 255, 255, 0.3);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+footer a:hover {
+    color: var(--accent-glow);
+}
+
+/* --- Responsive adjustments --- */
+@media (max-width: 1000px) {
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .controls label, .controls select {
+        width: 100%;
+        box-sizing: border-box;
+        margin: 5px 0;
+    }
+    canvas#chart {
+        height: 350px;
+    }
+}
