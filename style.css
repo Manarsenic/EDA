@@ -27,7 +27,7 @@ header {
 
 h1 {
   color: var(--text-primary);
-  text-shadow: 0 0 5px rgba(0, 255, 255, 0.5); /* Subtle neon glow */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.967); /* Subtle neon glow */
   margin-bottom: 5px;
 }
 
@@ -49,7 +49,7 @@ h1 {
   gap: 15px;
   padding: 10px;
   background-color: var(--bg-medium);
-  border: 1px solid #333333;
+  border: 1px solid hsl(182, 99%, 53%);
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
 }
